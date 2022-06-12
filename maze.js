@@ -122,10 +122,10 @@ function solveMaze(){
 
         if (xLoc > 0){
             if (tiles[xLoc-1][yLoc].state == 'e'){
-                    Xqueue.push(xLoc-1);
-                    Yqueue.push(yLoc);
-                    tiles[xLoc-1][yLoc].state = tiles[xLoc][yLoc].state + 'l';
-                    
+                Xqueue.push(xLoc-1);
+                Yqueue.push(yLoc);
+                tiles[xLoc-1][yLoc].state = tiles[xLoc][yLoc].state + 'l';
+                rect(tiles[xLoc-1][yLoc].x, tiles[xLoc-1][yLoc].y, tileW, tileH, tiles[xLoc-1][yLoc].state)
                     
                 
             }
@@ -134,9 +134,10 @@ function solveMaze(){
         if (xLoc < tileColumnCount - 1){
             if (tiles[xLoc+1][yLoc].state == 'e'){
                 
-                    Xqueue.push(xLoc+1);
-                    Yqueue.push(yLoc);
-                    tiles[xLoc+1][yLoc].state = tiles[xLoc][yLoc].state + 'r';
+                Xqueue.push(xLoc+1);
+                Yqueue.push(yLoc);
+                tiles[xLoc+1][yLoc].state = tiles[xLoc][yLoc].state + 'r';
+                rect(tiles[xLoc+1][yLoc].x, tiles[xLoc+1][yLoc].y, tileW, tileH, tiles[xLoc+1][yLoc].state)
                     
                     
             }
@@ -146,6 +147,7 @@ function solveMaze(){
                 Xqueue.push(xLoc);
                 Yqueue.push(yLoc-1);
                 tiles[xLoc][yLoc-1].state = tiles[xLoc][yLoc].state + 'u';
+                rect(tiles[xLoc][yLoc-1].x, tiles[xLoc][yLoc-1].y, tileW, tileH, tiles[xLoc][yLoc-1].state)
                 
 
             }
@@ -156,6 +158,7 @@ function solveMaze(){
                 Xqueue.push(xLoc);
                 Yqueue.push(yLoc+1);
                 tiles[xLoc][yLoc+1].state = tiles[xLoc][yLoc].state + 'd';
+                rect(tiles[xLoc][yLoc+1].x, tiles[xLoc][yLoc+1].y, tileW, tileH, tiles[xLoc][yLoc+1].state)
                 
             }
         }
